@@ -1,8 +1,6 @@
-from module.transformer import *
 import torch
 import torch.nn as nn
 from utils.srm_filter_kernel import *
-from module.Attention import SELayer
 import torch.nn.functional as F
 
 

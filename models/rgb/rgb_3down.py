@@ -3,7 +3,6 @@ import torch.nn as nn
 from module.transformer import *
 from utils.srm_filter_kernel import *
 import torch.nn.functional as F
-from module.Attention import SELayer
 
 
 class Block_(nn.Module):

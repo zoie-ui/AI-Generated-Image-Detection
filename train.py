@@ -21,7 +21,8 @@ from PIL import ImageFile
 
 #from models.baseline.Zhang import HcNet
 #from models.baseline.QuanNet import *
-#from models.dual.DualCT import *
+#import your model
+from models.DualNet import *
 import argparse
 import logging
 from tqdm import tqdm
@@ -143,7 +144,8 @@ def train():
         f"dataset: {args.type} | "
         f"input_size: {args.size} |\n"
     )
-    net = models.resnet18(pretrained=False)
+    #net = models.resnet18(pretrained=False)
+    net = DualNet()
     net = net.cuda()
     net = nn.DataParallel(net)
     logger.info(net)

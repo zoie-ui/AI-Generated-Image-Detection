@@ -15,8 +15,8 @@ class DualNet(nn.Module):
             residual(256, 256)
         )
         self.r_elayers = nn.Sequential(
-            residual(256, 256),
-            residual(256, 256)
+            plain(256, 256),
+            plain(256, 256)
         )
         self.fc1 = nn.Linear(512, 2)
 

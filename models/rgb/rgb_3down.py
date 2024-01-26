@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-from module.transformer import *
 from utils.srm_filter_kernel import *
 import torch.nn.functional as F
 

@@ -269,7 +269,7 @@ def test(name, op=None):
                                               batch_size=args.batch_size,
                                               shuffle=True,
                                               drop_last=False)
-    net = models.resnet18(pretrained=False)
+    net = DualNet()
     '''
     dicts = torch.load(name)['net']
     mynet_dict = net.state_dict()
@@ -337,15 +337,15 @@ if __name__ == '__main__':
     train()
     bacc = args.checkpoints + 'model_best_acc.pt'
     bloss = args.checkpoints + 'model_best_loss.pt'
-    #test(bacc)
-    #test(bloss)
+    test(bacc)
+    test(bloss)
     #test(bacc, "rotate")
     #test(bloss, "rotate")
     #options = ["gb3x3", "gb5x5", "median3x3", "median5x5", "avg3x3", "avg5x5", "resize0.5", "resize0.8", "test_75", "test_85", "test_95"]
-    options = ['color', 'brightness', 'contrast', 'sharp', "rotate", "gb5x5", "avg5x5"]
+    #options = ['color', 'brightness', 'contrast', 'sharp', "rotate", "gb5x5", "avg5x5"]
     #options = ["gb3x3", "gb5x5"]
-    for op in options:
-        test(bacc, op)
+    #for op in options:
+    #    test(bacc, op)
 
     #for op in options:
     #    test(bloss, op)
